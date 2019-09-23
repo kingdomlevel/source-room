@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>source room gallery</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1><%= @current_exhibitions %></h1>
+    <header>
+        <h2>source room</h2>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Exhibitions</a>
+                    <ul id="current-exhibitions">
+                        <li>
+                            <a href="#">Temp Sculptures</a>
+                        </li>
+                        <li>
+                            <a href="#">Temp Photos</a>
+                        </li>
+                        <li>
+                            <a href="#">Temp Internet</a>
+                        </li>
+                        <li>
+                            <a id="past-exhibitons-link" href="#">PAST</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Artists</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <%= yield %>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- NO JS: <script src="" async defer></script> -->
+</body>
+
+</html>
