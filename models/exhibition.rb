@@ -1,21 +1,23 @@
 require('date')
 require_relative('../db/sql_runner.rb')
+require_relative('./artist.rb')
 
 class Exhibition
-  attr_reader(:id, :title, :description)
+  attr_reader(:id, :title, :description, :artists)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @title = options['title']
     @description = options['description'].to_i if options['description']
     @start_date = options['start_date']
-    @artists = options['start_date'] if options['artists']
+    @end_date = options['end_date']
+    @artists = options['artists'] if options['artists']
   end
 
   def save()
-    sql = "INSERT INTO artists(name, year_born, hometown)
+    sql = "INSERT INTO exhibitions(title, description, start_date)
             VALUES ($1, $2, $3) RETURNING id"
-    values = [@name, @year_born, @hometown]
+    values = [@title, @description, @start_date.to_s]
     sql_result = SqlRunner.run(sql, values)
     @id = sql_result.first['id'].to_i
 

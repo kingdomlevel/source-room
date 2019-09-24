@@ -10,25 +10,24 @@
 </head>
 
 <body>
-    <h1><%= @current_exhibitions %></h1>
     <header>
         <h2>source room</h2>
         <nav>
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="#">Exhibitions</a>
+                    <a href="/exhibitions">Exhibitions</a>
                     <ul id="current-exhibitions">
                         <li>
-                            <a href="#">Temp Sculptures</a>
+                            <a href="#"><%= @current_exhibitions[0].title %></a>
                         </li>
                         <li>
-                            <a href="#">Temp Photos</a>
+                            <a href="#"><%= @current_exhibitions[1].title %></a>
                         </li>
                         <li>
-                            <a href="#">Temp Internet</a>
+                            <a href="#"><%= @current_exhibitions[2].title %></a>
                         </li>
                         <li>
                             <a id="past-exhibitons-link" href="#">PAST</a>

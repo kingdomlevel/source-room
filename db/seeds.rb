@@ -1,4 +1,5 @@
 require('date')
+require('pry')
 require_relative('../models/artist.rb')
 require_relative('../models/exhibition.rb')
 
@@ -38,7 +39,7 @@ windfarm_exhibit = Exhibition.new({
     'title' => 'ambulance blues',
     'description' => lorem_ipsum,
     'start_date' => Date.new(2019, 8, 30),
-    'end_date' => Date.new(2019, 10, 04),
+    'end_date' => Date.new(2019, 10, 4),
     'artists' => [niall]
 })
 windfarm_exhibit.save()
@@ -48,7 +49,7 @@ lookout_exhibit = Exhibition.new({
     'description' => lorem_ipsum,
     'start_date' => Date.new(2019, 8, 9),
     'end_date' => Date.new(2019, 9, 30),
-    'artists' => [deliah, warren]
+    'artists' => [delilah, warren]
 })
 lookout_exhibit.save()
 
@@ -66,7 +67,7 @@ better_rainfall_exhibit = Exhibition.new({
     'description' => lorem_ipsum,
     'start_date' => Date.new(2019, 7, 1),
     'end_date' => Date.new(2019, 8, 14),
-    'artists' => [deliah]
+    'artists' => [delilah]
 })
 better_rainfall_exhibit.save()
 
