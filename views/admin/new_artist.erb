@@ -1,0 +1,22 @@
+<section class="main-content">
+    <h1>New Artist</h1>
+    
+    <form method="POST" action="/admin/artists" class="artist-form">
+        <div class="form-label-group">
+            <label for="name">Artist Name:</label>
+            <input type="text" class="text-field-input" name="name" placeholder="Artist Name" required/>
+        </div>
+        <div class="form-label-group">
+            <label for="year_born">Year Born:</label>
+            <input class="year-field text-field-input" type="number" min="0" max="2030" placeholder="Year Born" name="year_born"/>
+        </div>
+        <div class="form-label-group">
+            <label for="hometown">Hometown:</label>
+            <input type="text" class="text-field-input" name="hometown" placeholder="Hometown"/>
+        </div>
+        <input type="submit" class="submit-button" value="Add">
+        
+    </form>
+
+    <a href="/admin/artists">back 2 Manage Artists</a>
+</section>

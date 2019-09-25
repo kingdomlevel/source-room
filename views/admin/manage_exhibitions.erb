@@ -1,0 +1,18 @@
+<section class="main-content">
+    <h1>Manage Exhibitions</h1>
+    
+    <ul class="exhibition-list">
+    ✚ <a href="/admin/exhibitions/new" id="new-link"> add new exhibition</a>
+        <% for exhibition in @exhibitions %>
+            <li class="exhibition-in-list">
+                <%= exhibition.title %> 
+                <a href="/admin/exhibitions/<%= exhibition.id %>/edit" class="edit-link"> ✎ </a>
+                <form class="delete-form" method="POST" action="/admin/exhibitions/<%= exhibition.id %>/delete">
+                    <input type="submit" value="❌" class="delete-button">
+                </form>
+            </li>
+        <% end %>
+    </ul>
+    <a href="/admin">back 2 Admin</a>
+
+</section>

@@ -19,6 +19,17 @@ class Artist
         @id = sql_result.first()['id'].to_i
     end
 
+    def update()
+        sql = "UPDATE artists SET (name, year_born, hometown) = ($1, $2, $3) WHERE id = $4"
+        values = [@name, @year_born, @hometown, @id]
+        SqlRunner.run(sql, values)
+    end
+
+    def delete()
+        sql = "DELETE FROM artists WHERE id = $1"
+        SqlRunner.run(sql, [@id])
+    end
+
     def get_exhibitions()
         sql = 'SELECT exhibitions.* FROM exhibitions INNER JOIN artist_exhibitions ON exhibitions.id = artist_exhibitions.exhibition_id 
                 WHERE artist_id = $1'

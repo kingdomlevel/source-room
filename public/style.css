@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+a {
+    color: white;
+}
+
 header {
     position: fixed;
     margin: 10px auto;
@@ -26,13 +30,20 @@ header h2 {
     margin: 5px;
 }
 
-header h2:hover {
+header h2 a {
+    text-decoration: white;
+}
+
+header:hover {
     letter-spacing: 16pt;
+}
+
+sidebar {
+    position: fixed;
 }
 
 nav {
     width: fit-content;
-    /* margin: 5px; */
     line-height: 1.3;
     font-size: 32pt;
     letter-spacing: 1pt;
@@ -44,7 +55,6 @@ nav ul {
 
 nav a {
     display: block;
-    color: white;
     font-weight: bold;
     text-transform: lowercase;
     text-decoration: none;
@@ -54,7 +64,7 @@ nav a {
 #current-exhibitions {
     display: none;
     font-size: 14pt;
-    transition: 1s ease;
+    /* transition: 1s ease; */
 }
 
 #current-exhibitions a {
@@ -65,7 +75,7 @@ nav a {
     display: block;
 }
 
-#past-exhibitons-link {
+#exhibitons-archive-link {
     color: pink;
     font-style: italic;
     text-transform: capitalize;
@@ -73,7 +83,6 @@ nav a {
 
 nav:hover a {
     opacity: 0.3;
-    z-index: 2;
 }
 
 nav a:hover {
@@ -85,10 +94,107 @@ nav a:hover + #current-exhibitions {
     display: block;
 }
 
-main {
-    margin: auto;
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
 }
 
 .single-page-image {
+    display: block;
+    margin: 10vh auto;
     width: 60vw;
+    height: 40vw;
+}
+
+.main-content {
+    position: relative;
+    top: 30px;
+    left: 280px;
+    width: 40vw;
+    font-size: 16pt;
+    line-height: 1.5;
+}
+
+#admin-nav li {
+    list-style-type: none;
+}
+
+#new-link {
+    text-decoration: underline;
+}
+
+.artist-list {
+    margin-top: 0;
+}
+
+.artist-list a {
+    color: white;
+    text-decoration: none;
+}
+
+.edit-link {
+    font-size: 26pt;
+    text-decoration: none;
+}
+
+
+.artist-in-list {
+    list-style-type: none;
+}
+
+.artist-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-form input {
+    margin: 10px;
+    font-size: 22pt;
+}
+.artist-form .text-field {
+    height: 22pt;
+    font-size: 22pt;
+}
+
+.year-field {
+    width: 140px;
+}
+
+.form-label-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-label-group label{
+    margin-left: 20px;
+    min-width: 120px;
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.submit-button {
+    background-color: black;
+    border: solid 3px white;
+    color: white;
+    text-align: center;
+    font-size: 20pt;
+    width: 80px;
+    height: 40px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    font-size: 18pt;
+}
+
+.exhibition-in-list {
+    list-style-type: none;
 }
