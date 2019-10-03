@@ -111,7 +111,7 @@ main{
     position: relative;
     top: 30px;
     left: 280px;
-    width: 40vw;
+    width: 70vw;
     font-size: 16pt;
     line-height: 1.5;
 }
@@ -164,11 +164,12 @@ main{
 .form-label-group {
     display: flex;
     flex-direction: row;
+    width: fit-content;
 }
 
 .form-label-group label{
     margin-left: 20px;
-    min-width: 120px;
+    min-width: 144px;
     display: flex;
     flex-direction: row;
     vertical-align: middle;
@@ -197,4 +198,44 @@ main{
 
 .exhibition-in-list {
     list-style-type: none;
+}
+
+.exhibition-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.exhibition-form input {
+    margin: 10px;
+    font-size: 22pt;
+}
+.exhibition-form .text-field {
+    height: 22pt;
+    font-size: 22pt;
+}
+
+textarea {
+    margin: 10px;
+    font-size: 16pt;
+    width: 295px;
+}
+
+.text-area-label {
+    align-items: flex-start !important;
+    margin-top: 5px;
+}
+
+.date-field {
+    font-size: 12pt !important;
+    width: 154px;
+}
+
+.small-submit {
+    font-size: 12pt !important;
+    width: 105px;
+    height: 30px;
+}
+
+.drop-down {
+    
 }

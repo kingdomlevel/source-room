@@ -3,27 +3,38 @@ require_relative('../db/sql_runner.rb')
 require_relative('./artist.rb')
 
 class Exhibition
-  attr_reader(:id, :title, :description, :artists)
+  attr_reader(:id, :title, :description, :start_date, :end_date, :artists)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @title = options['title']
-    @description = options['description'].to_i if options['description']
+    @description = options['description'] if options['description']
     @start_date = options['start_date']
     @end_date = options['end_date']
     @artists = options['artists'] if options['artists']
   end
 
   def save()
-    sql = "INSERT INTO exhibitions(title, description, start_date)
-            VALUES ($1, $2, $3) RETURNING id"
-    values = [@title, @description, @start_date.to_s]
+    sql = "INSERT INTO exhibitions(title, description, start_date, end_date)
+            VALUES ($1, $2, $3, $4) RETURNING id"
+    values = [@title, @description, @start_date.to_s, @end_date.to_s]
     sql_result = SqlRunner.run(sql, values)
     @id = sql_result.first['id'].to_i
 
     # saved in db: now save relationship to artist
-    save_artist_relationship()
+    save_artist_relationship() if @artists
   end
+
+  def update()
+      sql = "UPDATE exhibitions SET (title, description, start_date, end_date) = ($1, $2, $3, $4) WHERE id = $5"
+      values = [@title, @description, @start_date, @end_date, @id]
+      SqlRunner.run(sql, values)
+  end
+
+  def delete()
+        sql = "DELETE FROM exhibitions WHERE id = $1"
+        SqlRunner.run(sql, [@id])
+    end
 
   def save_artist_relationship()
     for artist in @artists
@@ -51,11 +62,11 @@ class Exhibition
   end
 
   def self.find(id)
-    sql = "SELECT * FROM artists
+    sql = "SELECT * FROM exhibitions
             WHERE id = $1"
     values = [id]
-    artist = SqlRunner.run(sql, values)
-    result = Artist.new(artist.first)
+    exhibition = SqlRunner.run(sql, values)
+    result = Exhibition.new(exhibition.first)
     return result
   end
 end

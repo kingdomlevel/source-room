@@ -4,15 +4,16 @@
     <form method="POST" action="/admin/artists/<%= @artist.id %>" class="artist-form">
         <div class="form-label-group">
             <label for="name">Artist Name:</label>
-            <input type="text" class="text-field-input" name="name" value="<%=@artist.name%>" required/>
+            <input type="text" class="text-field-input" name="name" placeholder="Artist Name" value="<%=@artist.name%>" required/>
         </div>
         <div class="form-label-group">
             <label for="year_born">Year Born:</label>
-            <input class="year-field text-field-input" type="number" min="0" max="2030" name="year_born" value="<%=@artist.year_born%>"/>
+            <input class="year-field text-field-input" type="number" min="0" max="2030" name="year_born" 
+                    placeholder="Year Born" value="<%=@artist.year_born%>"/>
         </div>
         <div class="form-label-group">
             <label for="hometown">Hometown:</label>
-            <input type="text" class="text-field-input" name="hometown" value="<%=@artist.hometown%>"/>
+            <input type="text" class="text-field-input" name="hometown" placeholder="Hometown" value="<%=@artist.hometown%>"/>
         </div>
         <input type="submit" class="submit-button" value="Save">
         

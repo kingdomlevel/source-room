@@ -1,0 +1,27 @@
+<section class="main-content">
+    <h1>New Exhibition</h1>
+    
+    <form method="POST" action="/admin/exhibitions" class="exhibition-form">
+        <div class="form-label-group">
+            <label for="title">Exhibition Title:</label>
+            <input type="text" class="text-field-input" name="title" placeholder="Exhibition Title" required/>
+        </div>
+        <div class="form-label-group">
+            <label for="description" class="text-area-label">Description:</label>
+            <textarea rows="4" cols="20" name="description" placeholder="Exhibition Description"></textarea>
+        </div>
+        <div class="form-label-group">
+            <label for="start_date" class="text-area-label">Start Date:</label>
+            <input type="date" class="date-field" name="start_date" value="<%= Date.today.to_s() %>">
+        </div>
+        <div class="form-label-group">
+            <label for="end_date" class="text-area-label">End Date:</label>
+        <input type="date" class="date-field" name="end_date" />
+        </div>
+        
+        <input type="submit" class="submit-button" value="Add">
+        
+    </form>
+
+    <a href="/admin/exhibitions">back 2 Manage Exhibitions</a>
+</section>

@@ -1,0 +1,39 @@
+<section class="main-content">
+    <h1>Edit Exhibition: <%= @exhibition.title %></h1>
+    
+    <form method="POST" action="/admin/exhibitions/<%= @exhibition.id %>" class="exhibition-form">
+        <div class="form-label-group">
+            <label for="title">Exhibition Title:</label>
+            <input type="text" class="text-field-input" name="title" placeholder="Exhibition Title" value="<%= @exhibition.title %>" required/>
+        </div>
+        <div class="form-label-group">
+            <label for="description" class="text-area-label">Description:</label>
+            <textarea rows="4" cols="20" name="description" placeholder="Exhibition Description" ><%= @exhibition.description if @exhibition.description%></textarea>
+        </div>
+        <div class="form-label-group">
+            <label for="start_date" class="text-area-label">Start Date:</label>
+            <input type="date" class="date-field" name="start_date" value="<%= @exhibition.start_date %>">
+        </div>
+        <div class="form-label-group">
+            <label for="end_date" class="text-area-label">End Date:</label>
+            <input type="date" class="date-field" name="end_date" value="<%= @exhibition.end_date %>">
+        </div>
+        <div class="form-label-group">
+            <label for="artists" class="text-area-label">Artists:</label>
+            <form class="delete-form" method="POST" action="/admin/exhibitions/<%= @exhibition.id %>/add_artist/:artist_id">
+                <% for artist in @artists %>
+                    <select name="topping" id="pizza-selection">
+                        <option value="Margherita" <%= "selected" if @order.topping == "Margherita" %>>
+                            Margherita
+                        </option>
+                    </select>
+                <% end %>
+                <input type="submit" value="✚ add artist" class="submit-button small-submit">
+            </form>
+        </div>
+        <input type="submit" class="submit-button" value="Save">
+        
+    </form>
+
+    <a href="/admin/exhibitions">back 2 Manage Exhibitions</a>
+</section>
