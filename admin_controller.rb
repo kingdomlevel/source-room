@@ -59,6 +59,7 @@ get '/admin/exhibitions' do
     erb (:"admin/manage_exhibitions")
 end
 
+
 # new exhibition
 get '/admin/exhibitions/new' do
     @artists = Artist.all()
@@ -84,6 +85,15 @@ post '/admin/exhibitions/:id' do
     exhibition = Exhibition.new(params)
     exhibition.update()
     redirect to '/admin/exhibitions'
+end
+
+# add artist to exhibition
+post '/admin/exhibitions/:exhibition_id/add_artist' do
+  exhibition = Exhibition.find(params[:exhibition_id])
+  artist = Artist.find(params[:artist_id])
+  exhibition.add_artist(artist)
+  exhibition.update_artist_relationship()
+  redirect to '/admin/exhibitions'
 end
 
 # delete exhibition
