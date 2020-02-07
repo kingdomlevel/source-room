@@ -1,0 +1,13 @@
+<section class="main-content visitor exhibition-list">
+  <h1 class="page-title">Artists</h1>
+  <ul class="visitor artist-list">
+
+  <% for artist in @artists %>
+      <li>
+        <a href="/artists/<%= artist.id %>" class="visitor artist-list">
+          <%= artist.name %>
+        </a>
+      </li>
+  <% end %>
+  </ul>
+</section>
