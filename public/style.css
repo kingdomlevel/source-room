@@ -12,6 +12,12 @@ a {
     color: white;
 }
 
+hr {
+    width: 484px;
+    position: absolute;
+    left: 0;
+}
+
 header {
     position: fixed;
     margin: 10px auto;
@@ -92,6 +98,13 @@ nav a:hover {
 nav a:hover + #current-exhibitions {
     opacity: 1;;
     display: block;
+}
+
+#admin-link {
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    right: 10px;
 }
 
 main{
@@ -236,6 +249,72 @@ textarea {
     height: 30px;
 }
 
+.artist-in-exhibition {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.artist-in-exhibition input {
+    margin: 10px;
+    font-size: 22pt;
+}
+
 .drop-down {
-    
+    display: none;
+}
+
+.visitor.exhibition-list {
+  display: flex;
+  flex-flow: column;
+}
+
+.page-title {
+  margin: 60px auto 30px auto;
+}
+.exhibition-list>a {
+  margin: 20px 10px;
+}
+
+.exhibition-list>a>article {
+  background-color: grey;
+  min-height: 240px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.exhibition-list>a>article h2 {
+  position: absolute;
+  bottom: 0;
+  margin-left: 20px;
+}
+
+.exhibition-artists-names {
+    position: absolute;
+    margin-bottom: 0;
+    bottom: 5px;
+    margin-left: 20px;
+}
+
+.exhibition-photo-feature {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.exhibition-dates {
+  text-align: right;
+  margin: 0px;
+}
+
+.exhibition-description {
+  text-align: justify;
+}
+
+.artist-list{
+  list-style: none;
+}
+
+.artist-list a {
+  text-decoration-style: wavy:
 }
