@@ -31,7 +31,7 @@ class Artist
     end
 
     def get_exhibitions()
-        sql = 'SELECT exhibitions.* FROM exhibitions INNER JOIN artist_exhibitions ON exhibitions.id = artist_exhibitions.exhibition_id 
+        sql = 'SELECT exhibitions.* FROM exhibitions INNER JOIN artist_exhibitions ON exhibitions.id = artist_exhibitions.exhibition_id
                 WHERE artist_id = $1'
         sql_result = SqlRunner.run(sql, [@id])
         result = sql_result.map { |exhibition| Exhibition.new(exhibition) }
@@ -41,7 +41,7 @@ class Artist
 
     # class methods:
     def self.all()
-        sql = 'SELECT * FROM artists'
+        sql = 'SELECT * FROM artists ORDER BY name'
         artists = SqlRunner.run(sql)
         result = artists.map { |artist| Artist.new(artist) }
         result
