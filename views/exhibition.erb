@@ -1,0 +1,24 @@
+<section class="main-content visitor exhibition-list">
+  <h1 class="page-title"><%= @exhibition.title %></h1>
+  <p class="exhibition-dates"> <%= @exhibition.start_date.strftime("%d/%m/%Y") %> - <%= @exhibition.end_date.strftime("%d/%m/%Y") %></p>
+  <ul class="visitor artist-list">
+
+  <% for artist in @exhibition.get_artists() %>
+      <li>
+        <a href="/artists/<%= artist.id %>" class="visitor artist-list">
+          <%= artist.name %>
+        </a>
+      </li>
+  <% end %>
+
+  <p class="exhibition-description" >
+    <%= @exhibition.description %>
+  </p>
+
+  <% for photo_url in @exhibition.get_exhibition_images() %>
+    <img src=<%= photo_url %> class="exhibition-photo-feature"/>
+  <% end %>
+
+  </ul>
+
+</section>

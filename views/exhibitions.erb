@@ -1,0 +1,25 @@
+<section class="main-content visitor exhibition-list">
+  <h1 class="page-title"> Exhibitions </h1>
+
+  <% for exhibition in @exhibitions %>
+
+
+  <a href="/exhibitions/<%= exhibition.id %>" >
+    <article class="exhibition-overview"
+              <%=  "style=background-image:url(#{exhibition.get_exhibition_images()[0]})" if exhibition.get_exhibition_images().length  > 0 %>
+              >
+      <h2><%= exhibition.title %></h2>
+      <p class="exhibition-artists-names">
+        <% artists = exhibition.get_artists() %>
+        <% for artist in artists %>
+          <%= artist.name %>
+          <%= "/" if artist != artists.last %>
+        <% end %>
+      </p>
+
+    </article>
+  </a>
+
+  <% end %>
+
+</section>
