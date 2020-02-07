@@ -12,11 +12,11 @@
         </div>
         <div class="form-label-group">
             <label for="start_date" class="text-area-label">Start Date:</label>
-            <input type="date" class="date-field" name="start_date" value="<%= Date.today.to_s() %>">
+            <input type="date" class="date-field" name="start_date" value="<%= Date.today.to_s() %>" required />
         </div>
         <div class="form-label-group">
             <label for="end_date" class="text-area-label">End Date:</label>
-        <input type="date" class="date-field" name="end_date" />
+        <input type="date" class="date-field" name="end_date" required />
         </div>
         
         <input type="submit" class="submit-button" value="Add">
