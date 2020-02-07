@@ -20,13 +20,12 @@ CREATE TABLE exhibitions(
 
 CREATE TABLE artist_exhibitions (
     id              SERIAL8         PRIMARY KEY,
-    artist_id       INT8            REFERENCES artists(id) NOT NULL,
-    exhibition_id   INT8            REFERENCES exhibitions(id) NOT NULL
+    artist_id       INT8            REFERENCES artists(id) ON DELETE CASCADE NOT NULL,
+    exhibition_id   INT8            REFERENCES exhibitions(id)ON DELETE CASCADE  NOT NULL
 );
 
 CREATE TABLE exhibition_images (
     id              SERIAL8         PRIMARY KEY,
-    exhibition_id   INT8            REFERENCES exhibitions(id) NOT NULL,
+    exhibition_id   INT8            REFERENCES exhibitions(id) ON DELETE CASCADE NOT NULL,
     image_url       VARCHAR(800)
 );
-
