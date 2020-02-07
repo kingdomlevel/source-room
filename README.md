@@ -1,10 +1,12 @@
 # Ruby Art Gallery Project
 
-I was given the following brief to create an art gallery:
+Functional website for a fake art gallery called _source room_. A full stack web app with **no javascript 😲!!!** 
 
+Full CRUD functionality w/ seperate views for visitors. N.B. there is no admin authentication - it's all just make believe.
 
-[paste from brief here]
+Built w/ Ruby, Sinatra + a PSQL DB.
 
-[put in screenshot of project here]
+I did this to familiarise myself with Ruby and get better at CSS during two (seperate) working weeks in 2019 / 2020. 
 
-[put in instructions for how to run here]
+![screenshot of a front end users view of the project](https://i.imgur.com/7t8tXum.jpg)
+![screenshot of admin user view for edit artist in the source room gallery project](https://i.imgur.com/pUyDLgK.png)
